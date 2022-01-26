@@ -1,2 +1,2 @@
 # grad
-graphql, react, apollo, django
+graphql, react, apollo, django - stack
