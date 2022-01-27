@@ -1,11 +1,23 @@
-# grad
-graphql, react, apollo, django - stack
+# grad project
+Made up of the following stack: graphql, react, apollo, django
 
-# Virtual environment
+# Setup/ run Virtual environment
 
-- to enter/create VM `virtualenv demo`
+- at root level create VM once `virtualenv env` (env being the name you set)
 - ensure Django is installed in Lib/site-packages `pip install "Django=3.0.*"`
-- to activate VM in windows `demo\Scripts\activate`, on unix `source demo/Scripts/activate`
-# demoWebsite
+- ensure django-graphene is installed 
 
-- to start website cd into demoWebsite then `python manage.py runserver`
+- to activate VM in windows `demo\Scripts\activate`, on unix `source env/Scripts/activate`
+- Note: you are in if you see `(env)` on CLI
+# Running website server
+
+- cd into website then `python manage.py runserver`
+
+# running a migration
+- `python manage.py makemigrations`
+- `python manage.py migrate`
+
+- load the test data `python manage.py loaddata ingredients`
+
+# to create new subfolder/ app
+- `django-admin startapp ingredients`
