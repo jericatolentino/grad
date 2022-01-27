@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'graphene_django',
-    # 'people.users'
+    'people.users',
 ]
 
 MIDDLEWARE = [
@@ -125,5 +125,5 @@ STATIC_URL = '/static/'
 # Where path.schema.schema is the location of the Schema object in your Django project.
 
 GRAPHENE = {
-    'SCHEMA': 'django_root.schema.schema'
+    'SCHEMA': 'people.schema.schema'
 }

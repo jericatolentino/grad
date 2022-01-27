@@ -1,0 +1,36 @@
+[
+    {
+        "model": "users.hobby",
+        "pk": 1,
+        "fields": {
+            "sport": "Gym"
+        }
+    },
+    {
+        "model": "users.hobby",
+        "pk": 2,
+        "fields": {
+            "sport": "Brazilian ju jitsu"
+        }
+    }, 
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "first_name": "Luke",
+            "surname": "Cassidy",
+            "age": 29,
+            "hobby": 2
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "first_name": "Jerica",
+            "surname": "Tolentino",
+            "age": 25,
+            "hobby": 1
+        }
+    }
+]

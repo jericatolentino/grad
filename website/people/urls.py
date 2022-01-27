@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from graphene_django.views import GraphQLView
+from graphene_django.views import GraphQLView # set as the view for endpoint
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('graphql', csrf_exempt(GraphQLView.as_view(graphiql=True))), # exempting req to path w. CSRF protection for now
 ]
+
+# Note: unlike REST, graphql is accessed under 1 endpoint
