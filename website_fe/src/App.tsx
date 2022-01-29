@@ -12,6 +12,20 @@ function App(): JSX.Element {
     }
   `;
 
+  const getAllUsers: DocumentNode = gql`
+    query {
+      allUsers {
+        firstName
+        surname
+        age
+        hobby {
+          id
+          sport
+        }
+      }
+    }
+  `
+
   const ExchangeRates = () => {
     const { loading, error, data } = useQuery(EXCHANGE_RATES);
 
@@ -32,11 +46,35 @@ function App(): JSX.Element {
     ));
   }
 
+  const AllUsers = () => {
+    const { loading, error, data } = useQuery(getAllUsers);
+
+    if (loading) return <p>Loading ...</p>
+    if (error) return <p>Error :(</p>
+
+    type user = {
+      firstName: string;
+      surname: string;
+      age: number;
+      hobby: {
+        id: number;
+        sport: string;
+      };
+    };
+
+    return data.allUsers.map((result: user) => (
+      <div key={result.firstName}>
+        <p>
+          {result.firstName} {result.surname}, age:{result.age}
+        </p>
+      </div>
+    ));
+  }
 
   return (
     <div className="App">
       <header className="App-header">
-        <ExchangeRates/>
+        <AllUsers/>
       </header>
     </div>
   );

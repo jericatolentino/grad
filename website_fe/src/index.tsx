@@ -13,24 +13,24 @@ import {
 } from "@apollo/client";
 
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
-  uri: 'https://48p1r2roz4.sse.codesandbox.io', // URL of graphql server
+  uri: 'http://127.0.0.1:8000/graphql', //'https://48p1r2roz4.sse.codesandbox.io', // URL of graphql server
   cache: new InMemoryCache() // caches query results
 });
 
-client
-  .query({
-    query: gql`
-      query GetRates {
-        rates(currency: "USD") {
-          currency
-        }
-      }
-    `
-  })
-  .then(result => {
-    // logs can be seen on react website
-    console.log(result);
-  });
+// client
+//   .query({
+//     query: gql`
+//       query GetRates {
+//         rates(currency: "USD") {
+//           currency
+//         }
+//       }
+//     `
+//   })
+//   .then(result => {
+//     // logs can be seen on react website
+//     console.log(result);
+//   });
 
 ReactDOM.render(
   <React.StrictMode>
