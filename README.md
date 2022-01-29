@@ -10,9 +10,11 @@ Made up of the following stack: graphql, react, apollo, django, (typescript)
 
 # Run GraphQL client sandbox
 - 'https://48p1r2roz4.sse.codesandbox.io'
+- Otherwise you can access straight via context using the `useQuery` react hook
 
 
 ### Back End ###
+
 # Setup/ run Virtual environment
 - at root level create VM once `virtualenv env` (env being the name you set)
 - ensure all packages is installed in Lib/site-packages `pip install -r requirements.txt`
