@@ -37,8 +37,20 @@ Made up of the following stack: graphql, react, apollo, django, (typescript)
 
 - load the test data `python manage.py loaddata users`
 
+### Setting up with PostgreSQL
+
+- ensure PostgreSQL is installed on your OS, version 14 and add to OS env variables (bashrc + source for unix if using git bash)
+- check psql is installed, `psql`
+
+- Note: by default psql will try to authenticate with database using name of machine user, user `psql -U postgres` to log in with postgres user and it will prompt for your setup password
+
+- to create db + user ref to owner for SQL setup file
+
+- In psql `\l` to show all databases 
+
 ## Other Info
 ### to create new subfolder/ app
 - `django-admin startapp users`
 ### getting list of all dependencies
 - on root level whilst in VM `pip freeze > requirements.txt`
+- installing `pip install -r requirements.txt` 
