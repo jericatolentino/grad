@@ -7,7 +7,6 @@ import reportWebVitals from './reportWebVitals';
 import {
   ApolloClient,
   InMemoryCache,
-  gql,
   NormalizedCacheObject,
   ApolloProvider
 } from "@apollo/client";
