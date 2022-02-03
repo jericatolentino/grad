@@ -13,7 +13,12 @@ import {
 
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   uri: 'http://127.0.0.1:8000/graphql', //'https://48p1r2roz4.sse.codesandbox.io', // URL of graphql server
-  cache: new InMemoryCache() // caches query results
+  cache: new InMemoryCache(), // caches query results
+  defaultOptions: {
+    watchQuery: { // watches cache of queries according to config below
+      fetchPolicy: 'cache-first' // looks for data in cache then uses, otherwise sends another network req
+    }
+  },
 });
 
 // client
