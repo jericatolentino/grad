@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { gql, useQuery, DocumentNode, NetworkStatus } from '@apollo/client';
+import { gql, useQuery, DocumentNode } from '@apollo/client';
 import MovableList from '../components/MovableList';
 interface IProps {
 }
