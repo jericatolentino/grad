@@ -48,7 +48,7 @@ const ResponsiveAppBar: React.FC<IProps> = ({
     }
 
     return (
-        <AppBar position="static">
+        <AppBar position="static" style={{ height: '10vh' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography

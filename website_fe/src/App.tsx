@@ -9,18 +9,24 @@ import UsersList from './containers/UsersList';
 import ResponsiveAppBar from './AppBar';
 
 const websiteWrapper = (component: JSX.Element | string): JSX.Element =>
-  <div style={{ backgroundColor: 'black', padding: '5em' }}>
+  <div style={{
+    height: '90vh',
+    width: '100vw',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }}>
     {component}
-  </div>
+  </div >
 
 function App(): JSX.Element {
   return (
     <Router>
-      <ResponsiveAppBar
-        pages={['Home', 'About', 'Users']}
-      />
       <div className="App">
         <header className="App-container">
+          <ResponsiveAppBar
+            pages={['Home', 'About', 'Users']}
+          />
           {/* A <Routes> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
           <Routes>
