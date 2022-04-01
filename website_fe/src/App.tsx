@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import UsersList from './containers/UsersList';
 import ResponsiveAppBar from './AppBar';
+import HomePage from './containers/HomePage';
 
 const websiteWrapper = (component: JSX.Element | string): JSX.Element =>
   <div style={{
@@ -33,7 +34,7 @@ function App(): JSX.Element {
             <Route path="/users" element={websiteWrapper(<UsersList />)} />
             <Route path="/users:name" element={websiteWrapper(<UsersList />)} />
             <Route path="/about" element={websiteWrapper('About PAGE :D')} />
-            <Route path="/" element={websiteWrapper('Home PAGE :)')} />
+            <Route path="/" element={websiteWrapper(<HomePage/>)} />
           </Routes>
         </header>
       </div>

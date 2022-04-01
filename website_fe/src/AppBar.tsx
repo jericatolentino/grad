@@ -43,7 +43,6 @@ const ResponsiveAppBar: React.FC<IProps> = ({
     };
 
     const handleClickButton = (data: any) => {
-        console.log('clicked', data)
         handleCloseNavMenu()
     }
 
