@@ -33,13 +33,8 @@ const UsersList: React.FC<IProps> = () => {
 		notifyOnNetworkStatusChange: true
 	});
 
-
-	console.log({ loading, error, data })
-
 	if (error) return <>{error.message}</>
 	if (loading) return <>{'loading ...'}</>
-
-	console.log('data', data)
 
 	const users = data.allUsers.map((result: user) => `${result.firstName} ${result.surname}, age: ${result.age}`)
 
