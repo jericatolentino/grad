@@ -16,41 +16,41 @@ Made up of the following stack: graphql, react, apollo, django, (typescript)
 
 ## Back End
 
-### Setup/ run Virtual environment
-- at root level create VM once `virtualenv env` (env being the name you set)
-- ensure all packages is installed in Lib/site-packages `pip install -r requirements.txt`
-- for package specific; `pip install "Django=3.0.*"`
-
-- to activate VM in windows `env\Scripts\activate`, on unix `source env/Scripts/activate`
-- Note: you are in if you see `(env)` on CLI
-
-- to deactivate `deactivate`
-### Running website server
-- cd into website then `python manage.py runserver`
-
-### Running GraphQL queries
-- http://127.0.0.1:8000/graphql
-
-### Running a migration
-- `python manage.py makemigrations`
-- `python manage.py migrate`
-
-- load the test data `python manage.py loaddata users`
-
 ### Setting up with PostgreSQL
 
 - ensure PostgreSQL is installed on your OS, version 14 and add to OS env variables (bashrc + source for unix if using git bash)
 - check psql is installed, `psql`
 
-- Note: by default psql will try to authenticate with database using name of machine user, user `psql -U postgres` to log in with postgres user and it will prompt for your setup password
+- In either pgAdmin or psql CLI
+- Referencing `website/people/settings.py` line 80
+- Create the same User credentials and allow all privileges
+- Create the same database name and assign the owner as the same user above
 
-- to create db + user ref to owner for SQL setup file
+### Setup/ run Virtual environment
+- ensure you have `virtualenv` installed
+- at root level create VM once `virtualenv env` (env being the name you set)
 
-- In psql `\l` to show all databases 
+- to activate VM in windows `env\Scripts\activate`, on unix `source env/bin/activate`
+- Note: you are in if you see `(env)` on CLI
+- to deactivate `deactivate`
 
+[`pip` or `pip3` depending which version you have installed]
+- cd into `website` folder
+- ensure all packages is installed in Lib/site-packages `pip install -r requirements.txt`
+- if you want to install new/update for a specific package; `pip install "Django=3.0.*"`
+
+### Running a migration
+- `python manage.py makemigrations` - apply changes based on models
+- `python manage.py migrate` - applying/unapplying migrations
+- `python manage.py loaddata users` - load the test data (may need to restart db to see changes)
+
+### Running website server
+- (ensure env is running) run `python manage.py runserver`
+
+### Running GraphQL queries
+- http://127.0.0.1:8000/graphql
 ## Other Info
 ### to create new subfolder/ app
 - `django-admin startapp users`
 ### getting list of all dependencies
-- on root level whilst in VM `pip freeze > requirements.txt`
-- installing `pip install -r requirements.txt` 
+- whilst in VM `pip freeze > requirements.txt`
