@@ -8,6 +8,7 @@ import {
 import UsersList from './containers/UsersList';
 import ResponsiveAppBar from './AppBar';
 import HomePage from './containers/HomePage';
+import ContactUsPage from './containers/ContactUsPage';
 
 const websiteWrapper = (component: JSX.Element | string): JSX.Element =>
   <div style={{
@@ -31,6 +32,7 @@ function App(): JSX.Element {
           {/* A <Routes> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
           <Routes>
+            <Route path='/contact-us' element={websiteWrapper(<ContactUsPage />)} />
             <Route path='/users' element={websiteWrapper(<UsersList />)} />
             <Route path='/users:name' element={websiteWrapper(<UsersList />)} />
             <Route path='/about' element={websiteWrapper('About PAGE :D')} />

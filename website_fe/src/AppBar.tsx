@@ -19,8 +19,6 @@ interface IProps {
     pages: string[];
 }
 
-// todo make more reusable
-
 const ResponsiveAppBar: React.FC<IProps> = ({
     pages
 }) => {
@@ -44,6 +42,17 @@ const ResponsiveAppBar: React.FC<IProps> = ({
 
     const handleClickButton = (data: any) => {
         handleCloseNavMenu()
+    }
+
+    const handleURL = (page: string) => {
+        switch(page) {
+            case 'Home':
+                return ''
+            case 'Contact us':
+                return 'contact-us'
+            default:
+                return page.toLowerCase()
+        }
     }
 
     return (
@@ -94,7 +103,7 @@ const ResponsiveAppBar: React.FC<IProps> = ({
                         >
                             {pages.map((page) => (
                                 <Link 
-                                    to={`/${page === 'Home' ? '' : page}`}
+                                    to={`/${handleURL(page)}`}
                                     style={{ textDecoration: 'none'}}
                                 >
                                     <MenuItem key={page} onClick={handleCloseNavMenu}>
@@ -109,7 +118,7 @@ const ResponsiveAppBar: React.FC<IProps> = ({
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Link 
-                                to={`/${page === 'Home' ? '' : page}`}
+                                to={`/${handleURL(page)}`}
                                 style={{ textDecoration: 'none'}}
                             >
                                 <Button
@@ -151,7 +160,7 @@ const ResponsiveAppBar: React.FC<IProps> = ({
                         >
                             {settings.map((setting) => (
                                 <Link 
-                                    to={`/${setting === 'Home' ? '' : setting}`}
+                                    to={`/${handleURL(setting)}`}
                                     style={{ textDecoration: 'none'}}
                                 >
                                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
