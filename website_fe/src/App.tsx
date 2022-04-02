@@ -11,7 +11,7 @@ import HomePage from './containers/HomePage';
 
 const websiteWrapper = (component: JSX.Element | string): JSX.Element =>
   <div style={{
-    height: '90vh',
+    height: '94vh',
     width: '100vw',
     display: 'flex',
     justifyContent: 'center',
@@ -23,18 +23,18 @@ const websiteWrapper = (component: JSX.Element | string): JSX.Element =>
 function App(): JSX.Element {
   return (
     <Router>
-      <div className="App">
-        <header className="App-container">
+      <div className='App'>
+        <header className='App-container'>
           <ResponsiveAppBar
-            pages={['Home', 'About', 'Users']}
+            pages={['Home', 'About', 'Users', 'Contact us']}
           />
           {/* A <Routes> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
           <Routes>
-            <Route path="/users" element={websiteWrapper(<UsersList />)} />
-            <Route path="/users:name" element={websiteWrapper(<UsersList />)} />
-            <Route path="/about" element={websiteWrapper('About PAGE :D')} />
-            <Route path="/" element={websiteWrapper(<HomePage/>)} />
+            <Route path='/users' element={websiteWrapper(<UsersList />)} />
+            <Route path='/users:name' element={websiteWrapper(<UsersList />)} />
+            <Route path='/about' element={websiteWrapper('About PAGE :D')} />
+            <Route path='/' element={websiteWrapper(<HomePage/>)} />
           </Routes>
         </header>
       </div>
