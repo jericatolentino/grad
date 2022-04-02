@@ -1,7 +1,8 @@
 
 import { AnimateSharedLayout, motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
+import { generateRandomEmoji } from '../utils/other/generateRandomEmoji'
 
 
 interface CardProps {
@@ -17,7 +18,7 @@ const MotionCard = styled(motion.div)<MotionCardProps>`
     padding: 1rem 2rem;
     color: black;
     font-size: 0.5em;
-    width: ${props => props.open && '70%'};
+    width: ${props => props.open ? '70%' : 'fit-content'};
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 `
@@ -39,7 +40,7 @@ const Card = ({ value }: CardProps) => {
             as={motion.h1}
             layout='position'
         >
-            🥨 {value}
+            {generateRandomEmoji()} {value}
         </MotionH1Normal>)
 
     const ExpandedCard =
